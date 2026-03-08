@@ -1,0 +1,3 @@
+# WordPicker
+
+Scrabble word picker

@@ -103,10 +103,20 @@ def put_letter_in_bag(num, bag):
             bag[index] = bag[index] + 1
         index = index + 1
 
+def menu():
+    print('-------------------')
+    print('l - list all words')
+    print('s - show tiles')
+    print('c - choose word')
+    print('q - quit')
+    user_input = input("Choice: ")
+    return user_input
+
 #--------------------------------------------
 def main():
 
     global Counts
+
     show_bag(Counts)
 
     total = sum(Counts)
@@ -130,8 +140,26 @@ def main():
     Counts = Bag
     reduce_bag()
 
+    # ------ main loop -----
+    while(True):
 
-    list_all_words()
+        choice = menu()
+        print(choice)
+        match choice:
+            case 'l':
+                list_all_words()
+            case 's':
+                show_bag(Counts)
+            case 'c':
+                word = input ('Choose word:')
+                use_word(word)
+            case 'q':
+                break
+            case _:
+                print('default ar') 
+
+        
+    # list_all_words()
 
 if __name__ == "__main__":
     main()

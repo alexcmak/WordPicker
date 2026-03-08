@@ -152,11 +152,12 @@ def main():
                 show_bag(Counts)
             case 'c':
                 word = input ('Choose word:')
+                word = word.upper()
                 use_word(word)
             case 'q':
                 break
             case _:
-                print('default ar') 
+                print('unknown option {choice}') 
 
         
     # list_all_words()

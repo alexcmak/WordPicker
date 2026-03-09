@@ -64,12 +64,15 @@ def use_word(word):
 
     if (check_word(word.lower()) == False):
         print(f'use word {word} failed.')
+        return False
     else:
         print(f'Use word {word}')
         update_counts(word, Counts)
 
     show_bag(Counts)
     reduce_bag()
+
+    return True
 
 def reduce_bag():
 
@@ -96,7 +99,7 @@ def put_letter_in_bag(num, bag):
     nletter = All_Tiles[num]
     #print(f'{num} translates to {nletter}')
 
-    # increement_letter_count(letter)
+    # increment_letter_count(letter)
     index = 0
     for letter in string.ascii_uppercase:
         if (letter == nletter):
@@ -124,6 +127,7 @@ def main():
     print(f'{len(ALL_words)} words')
 
 
+    chosen_words = []
     # ------ main loop -----
     while(True):
 
@@ -137,7 +141,9 @@ def main():
             case 'c':
                 word = input ('Choose word:')
                 word = word.upper()
-                use_word(word)
+                if (use_word(word) == True):
+                    chosen_words.append(word)
+                    print(f"words chosen: {chosen_words}")
             case 'q':
                 break
             case _:

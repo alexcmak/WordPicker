@@ -121,24 +121,8 @@ def main():
 
     total = sum(Counts)
     print(f"total tiles {total}")
+    print(f'{len(ALL_words)} words')
 
-    start = 1
-    stop = total-1
-    n = 10
-
-    random_numbers = random.sample(range(start, stop + 1), n)
-    random_numbers.sort()
-    print(f"Picked {n} tiles.")
-    print(random_numbers)
-
-    Bag = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
-    for n in random_numbers:
-        put_letter_in_bag(n, Bag)
-
-    show_bag(Bag)
-
-    Counts = Bag
-    reduce_bag()
 
     # ------ main loop -----
     while(True):
@@ -158,9 +142,6 @@ def main():
                 break
             case _:
                 print('unknown option {choice}') 
-
-        
-    # list_all_words()
 
 if __name__ == "__main__":
     main()

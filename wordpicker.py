@@ -99,7 +99,7 @@ def reduce_bag():
             words.append(word)
 
     ALL_words = words # replace with new list, so working with smaller list
-    print(f'{len(ALL_words)} words')
+    #print(f'{len(ALL_words)} words')
 
 def list_all_words():
     for word in ALL_words:
@@ -107,20 +107,6 @@ def list_all_words():
 
     print(f'{len(ALL_words)} words')
     
-
-# put n into alphabet count
-def put_letter_in_bag(num, bag):
-    global All_Tiles
-
-    nletter = All_Tiles[num]
-    #print(f'{num} translates to {nletter}')
-
-    # increment_letter_count(letter)
-    index = 0
-    for letter in string.ascii_uppercase:
-        if (letter == nletter):
-            bag[index] = bag[index] + 1
-        index = index + 1
 
 def remove_word(word):
 
@@ -142,7 +128,7 @@ def menu():
     global chosen_words
 
     print('-------------------')
-    print('l - list all words')
+    print(f'l - list all {len(ALL_words)} words')
     print('s - show tiles')
     print('c - choose word')
     if (len(chosen_words) > 0):
